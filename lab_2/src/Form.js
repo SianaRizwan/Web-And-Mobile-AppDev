@@ -31,7 +31,7 @@ const Form = (props) => {
           onClick={props.handleSubmit}>
           {props.creation ? 'Create' : 'Update'}
         </div>
-        <div className='timerEdit__cancel' onClick={props.changeEditMode}>
+        <div className='timerEdit__cancel' onClick={props.closeForm}>
           Cancel
         </div>
       </div>

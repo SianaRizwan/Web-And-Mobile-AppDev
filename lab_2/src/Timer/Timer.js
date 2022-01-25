@@ -48,7 +48,7 @@ const Timer = (props) => {
           project={project}
           handleProject={handleProject}
           handleTitle={handleTitle}
-          changeEditMode={changeEditMode}
+          closeForm={changeEditMode}
         />
       ) : (
         <StopWatch
