@@ -23,7 +23,7 @@
   font-weight: 600;
 }
 
-.timer__rowTwo {
+.rowTwo {
   width: 19vw;
   height: 5vh;
   display: flex;
@@ -42,7 +42,7 @@
   font-size: 4vh;
 }
 
-.timer__rowThree {
+.rowThree {
   width: 19vw;
   display: flex;
   align-self: center;
@@ -50,8 +50,8 @@
   margin-bottom: 0.3em;
 }
 
-.timer__button {
-  width: 18.7vw;
+.button1 {
+  width: 16vw;
   height: 4vh;
   border: 0.1em solid green;
   color: green;
@@ -59,11 +59,11 @@
   align-self: center;
   justify-content: center;
   margin-bottom: 0.3em;
-  cursor: pointer;
+  
 }
 
-.timer__buttonRed {
-  width: 18.7vw;
+.button2 {
+  width: 16vw;
   height: 4vh;
   border: 0.1em solid red;
   color: red;
@@ -71,7 +71,6 @@
   align-self: center;
   justify-content: center;
   margin-bottom: 0.3em;
-  cursor: pointer;
 }
 
 .timerEdit__buttonGroup {

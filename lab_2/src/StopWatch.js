@@ -10,24 +10,13 @@ const StopWatch = (props) => {
 
   let toBeEditedTimerList = [...timerList];
 
-  const startTimer = () => {
+  function startTimer() {
     setStoptime(!stoptime);
   };
   function stopTimer() {
     setStoptime(!stoptime);
   }
 
-  useEffect(() => {
-    if (!stoptime) {
-      console.log('timer is running');
-      timerCycle();
-      setTimeout(function () {
-        setTriggerAfterSecond(!triggerAfterSecond);
-      }, 1000);
-    } else {
-      console.log('timer is stopped');
-    }
-  }, [stoptime, triggerAfterSecond]);
 
   const timerCycle = () => {
     if (stoptime === false) {
@@ -56,7 +45,7 @@ const StopWatch = (props) => {
         )
       );
 
-      console.log(timerList[props.id]);
+      //console.log(timerList[props.id]);
     }
   };
 
@@ -66,13 +55,24 @@ const StopWatch = (props) => {
     );
   };
 
+  useEffect(() => {
+    if (!stoptime) {
+      timerCycle();
+      setTimeout(function () {
+        setTriggerAfterSecond(!triggerAfterSecond);
+      }, 900);
+    } else {
+      console.log('Stopped');
+    }
+  }, [stoptime, triggerAfterSecond]);
+
   return (
     <div className='timer'>
-      <div className='timer__rowOne'>
-        <div className='timer__title'>{props.title}</div>
-        <div className='timer__project'>{props.project}</div>
+      <div className='rowOne'>
+        <div className='title'>{props.title}</div>
+        <div className='project'>{props.project}</div>
       </div>
-      <div className='timer__rowTwo'>
+      <div className='rowTwo'>
         <div className='timer__timer'>
           {timerList[props.id].hour < 10 ? (
             <span>0{timerList[props.id].hour}</span>
@@ -93,7 +93,7 @@ const StopWatch = (props) => {
           )}
         </div>
       </div>
-      <div className='timer__rowThree'>
+      <div className='rowThree'>
         <div
           style={{ marginRight: '0.2em', cursor: 'pointer' }}
           onClick={deleteTimer}>
@@ -104,12 +104,12 @@ const StopWatch = (props) => {
         </div>
       </div>
       {stoptime && (
-        <div className='timer__button' onClick={startTimer}>
+        <div className='button1' onClick={startTimer}>
           Start
         </div>
       )}
       {!stoptime && (
-        <div className='timer__buttonRed' onClick={stopTimer}>
+        <div className='button2' onClick={stopTimer}>
           Stop
         </div>
       )}
