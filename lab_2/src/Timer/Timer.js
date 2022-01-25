@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import './Timer.css';
 import Form from '../Form';
 import StopWatch from '../StopWatch';

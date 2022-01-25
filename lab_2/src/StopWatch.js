@@ -16,15 +16,12 @@ const StopWatch = (props) => {
 
   useEffect(() => {
     if (!stoptime) {
-      console.log('timer is running');
-
       timerCycle();
-
       setTimeout(function () {
         setTriggerAfterSecond(!triggerAfterSecond);
       }, 1000);
     } else {
-      console.log('timer is stopped');
+      console.log('Stopped');
     }
   }, [stoptime, triggerAfterSecond]);
 
@@ -55,7 +52,7 @@ const StopWatch = (props) => {
         )
       );
 
-      console.log(timerList[props.id]);
+     
     }
   };
 
@@ -67,11 +64,11 @@ const StopWatch = (props) => {
 
   return (
     <div className='timer'>
-      <div className='timer__rowOne'>
+      <div className='rowOne'>
         <div className='timer__title'>{props.title}</div>
         <div className='timer__project'>{props.project}</div>
       </div>
-      <div className='timer__rowTwo'>
+      <div className='rowTwo'>
         <div className='timer__timer'>
           {timerList[props.id].hour < 10 ? (
             <span>0{timerList[props.id].hour}</span>
@@ -92,7 +89,7 @@ const StopWatch = (props) => {
           )}
         </div>
       </div>
-      <div className='timer__rowThree'>
+      <div className='rowThree'>
         <div
           style={{ marginRight: '0.2em', cursor: 'pointer' }}
           onClick={deleteTimer}>
